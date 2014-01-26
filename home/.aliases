@@ -27,6 +27,7 @@ alias df='df -h'
 # Short-cuts for copy-paste.
 alias c='pbcopy'
 alias p='pbpaste'
+alias x="pbpaste | pbcopy"
 
 # Remove all items safely, to Trash (`brew install trash`).
 alias rm='trash'

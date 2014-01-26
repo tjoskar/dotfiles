@@ -4,10 +4,9 @@ function ql() {
 }
 
 #CD and ln
-function cdd()
-{
-  if [ "$*" = "" ] then
-    cd
+function cdd() {
+  if [ "$*" = "" ]; then
+    cd ~;
   else
     cd "$*";
   fi

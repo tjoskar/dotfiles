@@ -30,3 +30,9 @@ installcask vagrant
 installcask virtualbox
 installcask vlc
 installcask wunderlist
+
+installcask qlcolorcode
+installcask qlstephen
+installcask qlmarkdown
+installcask quicklook-json
+installcask betterzipql

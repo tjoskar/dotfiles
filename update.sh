@@ -2,12 +2,14 @@
 
 cd "$(dirname "${BASH_SOURCE}")"
 
+git pull origin master
+
 function copyToHome() {
     rsync --exclude ".git/" --exclude ".DS_Store" -av --no-perms home/ ~
 }
 
 function copyToSublime() {
-    rsync --exclude ".git/" --exclude ".DS_Store" -av --no-perms sublime/* "~/Library/Application Support/Sublime Text 3/Packages/User"
+    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "README.md" -av --no-perms sublime/* "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

@@ -1,22 +1,3 @@
-// Recommended package
-
-// Alignment
-// ApacheConf
-// Clipboard History
-// Docblockr
-// EditorConfig
-// Gist
-// Git
-// Laravel blade highlight
-// LESS
-// Sass
-// SidebarEnhancement
-// Soda
-// SublimeCodeIntel
-// SublimeLinter
-// Sublimerge
-// Xdebug
-
 {
     "auto_complete_selector": "source, text",
     "bold_folder_labels": true,

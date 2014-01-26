@@ -29,8 +29,6 @@ export PATH=$PATH:/opt/X11/bin
 alias tv="ssh tjoskar@192.168.0.12 -p 300"
 ```
 
-## Author
-
 ## Thanks to…
 
 * [Mathias Bynens](http://mathiasbynens.be/) and his [dotfiles](https://github.com/mathiasbynens/dotfiles)

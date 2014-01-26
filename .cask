@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Install native apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+function installcask() {
+  brew cask install "${@}" 2> /dev/null
+}
+
+# installcask onepassword
+
+installcask alfred
+installcask brackets
+installcask dash
+installcask dropbox
+installcask evernote
+installcask firefox
+installcask github
+installcask google-chrome
+installcask iterm2
+installcask macvim
+installcask opera
+installcask sequel-pro
+installcask skype
+installcask spotify
+installcask sublime-text
+installcask the-unarchiver
+installcask utorrent
+installcask vagrant
+installcask virtualbox
+installcask vlc
+installcask wunderlist

@@ -2,11 +2,10 @@
 
 cd "$(dirname "${BASH_SOURCE}")"
 
-git pull origin master
+# git pull origin master
 
 function copyToHome() {
-    rsync --exclude ".git/" --exclude ".DS_Store" -av --no-perms home/* ~
-    source ~/.zshrc
+    rsync --exclude ".git/" --exclude ".DS_Store" -av --no-perms home/ ~
 }
 
 function copyToSublime() {

@@ -36,3 +36,5 @@ installcask qlstephen
 installcask qlmarkdown
 installcask quicklook-json
 installcask betterzipql
+
+brew cask alfred link

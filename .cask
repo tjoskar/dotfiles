@@ -26,8 +26,8 @@ installcask spotify
 installcask sublime-text
 installcask the-unarchiver
 installcask utorrent
-installcask vagrant
 installcask virtualbox
+installcask vagrant
 installcask vlc
 installcask wunderlist
 

@@ -2,6 +2,7 @@
 # Install native apps
 brew tap phinze/homebrew-cask
 brew install brew-cask
+brew tap caskroom/versions
 
 function installcask() {
   brew cask install "${@}" 2> /dev/null
@@ -23,7 +24,7 @@ installcask opera
 installcask sequel-pro
 installcask skype
 installcask spotify
-installcask sublime-text
+installcask sublime-text3
 installcask the-unarchiver
 installcask utorrent
 installcask virtualbox

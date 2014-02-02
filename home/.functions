@@ -151,7 +151,7 @@ function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
 
-# https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
+# Rewritten from https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
 # Count code lines in some directory.
 # $ loc py js css
 # # => Lines of code for .py: 3781
@@ -169,7 +169,7 @@ function loc() {
     if [[ firstletter != "." ]]; then
       ext=".$ext"
     fi
-    lines=`find-exec "*$ext" cat | wc -l`
+    lines=`find . -name "*$ext" | cat | wc -l`
     lines=${lines// /}
     total=$(($total + $lines))
     echo "Lines of code for ${fg[blue]}$ext${reset_color}: ${fg[green]}$lines${reset_color}"

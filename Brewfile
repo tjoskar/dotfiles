@@ -15,6 +15,7 @@ tap homebrew/dupes
 install homebrew/dupes/grep
 tap josegonzalez/homebrew-php
 install php55
+install python
 
 # Install other useful binaries
 install git

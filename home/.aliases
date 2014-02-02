@@ -18,15 +18,15 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias ......='cd ../../../../../'
-alias cdb='cd -'
+# alias cdb='cd -' # It's faster to type `-` in zsh
 
-alias s="history | grep"
+# alias s="history | grep" # I never use this
 alias cl='clear'
 alias df='df -h'
 
 # Short-cuts for copy-paste.
-alias c='pbcopy'
-alias p='pbpaste'
+alias copy='pbcopy'
+alias paste='pbpaste'
 alias x="pbpaste | pbcopy"
 
 # Remove all items safely, to Trash (`brew install trash`).
@@ -67,7 +67,3 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
-
-
-# alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"

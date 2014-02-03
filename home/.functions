@@ -175,8 +175,6 @@ function loc() {
       temp=${temp// /}
       lines=$(($lines + $temp))
     done
-    # lines=`find . -name "*$ext" | cat | wc -l`
-    # lines=${lines// /}
     total=$(($total + $lines))
     echo "Lines of code for ${fg[blue]}$ext${reset_color}: ${fg[green]}$lines${reset_color}"
   done

@@ -169,8 +169,14 @@ function loc() {
     if [[ firstletter != "." ]]; then
       ext=".$ext"
     fi
-    lines=`find . -name "*$ext" | cat | wc -l`
-    lines=${lines// /}
+    lines=0
+    for file in $(find . -iname "*$ext" -type f); do
+      temp=`cat $file | wc -l`
+      temp=${temp// /}
+      lines=$(($lines + $temp))
+    done
+    # lines=`find . -name "*$ext" | cat | wc -l`
+    # lines=${lines// /}
     total=$(($total + $lines))
     echo "Lines of code for ${fg[blue]}$ext${reset_color}: ${fg[green]}$lines${reset_color}"
   done

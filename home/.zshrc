@@ -38,6 +38,9 @@ ZSH_THEME="cloud"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git bower brew Composer)
 
+# Allow comments even in interactive shells
+set -k
+
 source $ZSH/oh-my-zsh.sh
 
 # Add `~/bin` to the `$PATH`

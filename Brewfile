@@ -23,6 +23,7 @@ install node
 install tree
 install p7zip
 install trash
+install phantomjs
 
 # Remove outdated versions from the cellar
 cleanup

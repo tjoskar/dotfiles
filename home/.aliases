@@ -1,5 +1,5 @@
 # XBMC
-alias xbmclog="tail -f ~/Library/Logs/xbmc.log"
+alias xbmclog="tail -f -100 ~/Library/Logs/xbmc.log"
 
 # PHP
 alias art="php artisan"

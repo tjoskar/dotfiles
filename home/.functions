@@ -205,6 +205,11 @@ function ram() {
   fi
 }
 
+# Install an application through brew cask
+function installapp() {
+  brew cask install "${@}"
+}
+
 # https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
 # 4 lulz.
 function compute() {

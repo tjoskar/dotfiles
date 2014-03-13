@@ -17,6 +17,11 @@ function cdd() {
 crm() {
   git commit -m"`curl -s http://whatthecommit.com/index.txt`"
 }
+qcommit() {
+  git add --all .
+  git commit -m"`curl -s http://whatthecommit.com/index.txt`"
+  git push
+}
 
 # Extract most know archives with one command
 extract () {

@@ -3,6 +3,7 @@
     "bold_folder_labels": true,
     "color_scheme": "Packages/User/Goldfish (SL).tmTheme",
     "copy_with_empty_selection": false,
+    "default_encoding": "UTF-8",
     "ensure_newline_at_eof_on_save": true,
     "find_selected_text": true,
     "font_size": 12,
@@ -19,5 +20,5 @@
     "theme": "Soda Dark 3.sublime-theme",
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true,
-    "word_wrap": false
+    "word_wrap": false,
 }

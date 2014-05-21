@@ -13,8 +13,18 @@ function cdd() {
   ls;
 }
 
+# Make and cd into directory
+function md() {
+  mkdir -p "$1" && cd "$1";
+}
+
+# cd into whatever is the forefront Finder window.
+function cdf() {  # short for cdfinder
+  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
+
 # Commit random message
-crm() {
+function crm() {
   git commit -m"`curl -s http://whatthecommit.com/index.txt`"
 }
 qcommit() {
@@ -23,8 +33,31 @@ qcommit() {
   git push
 }
 
+# Take this repo and copy it to somewhere else minus the .git stuff.
+function gitexport (){
+  mkdir -p "$1"
+  git archive master | tar -x -C "$1"
+}
+
+# open all changed files (that still actually exist) in the editor
+# credit: @cowboy
+function ged() {
+  local files=()
+  for f in $(git diff --name-only "$@"); do
+    [[ -e "$f" ]] && files=("${files[@]}" "$f")
+  done
+  local n=${#files[@]}
+  echo "Opening $n $([[ "$@" ]] || echo "modified ")file$([[ $n != 1 ]] && \
+    echo s)${@:+ modified in }$@"
+  q "${files[@]}"
+}
+
+function cask() {
+  brew cask install "${@}"
+}
+
 # Extract most know archives with one command
-extract () {
+function extract () {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1     ;;
@@ -46,20 +79,9 @@ extract () {
   fi
 }
 
-# Make and cd into directory
-function mkd() {
-  mkdir -p "$1" && cd "$1";
-}
-
-# cd into whatever is the forefront Finder window.
-cdf() {  # short for cdfinder
-  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-}
-
-# Take this repo and copy it to somewhere else minus the .git stuff.
-function gitexport(){
-    mkdir -p "$1"
-    git archive master | tar -x -C "$1"
+# Copy w/ progress
+function cpp() {
+  rsync -WavP --human-readable --progress $1 $2
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
@@ -102,6 +124,10 @@ function fs() {
   else
     du $arg .[^.]* *
   fi
+}
+
+function topcommand() {
+  history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
 }
 
 # Start an HTTP server from a directory, optionally specifying the port

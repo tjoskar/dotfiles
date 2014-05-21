@@ -2,7 +2,7 @@
 if command -v subl > /dev/null 2>&1; then # Sublime installed
   export EDITOR="subl"
 else #
-  export EDITOR="pico"
+  export EDITOR="nano"
 fi
 
 # Larger bash history (allow 32³ entries; default is 500)

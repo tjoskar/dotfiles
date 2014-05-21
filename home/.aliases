@@ -18,11 +18,21 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias ......='cd ../../../../../'
+alias sublimehome='cd Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
 # alias cdb='cd -' # It's faster to type `-` in zsh
 
 # alias s="history | grep" # I never use this
 alias cl='clear'
 alias df='df -h'
+alias du='du -ach'
+alias mkdir='mkdir -pv'
+
+# ls
+alias ls='ls -FalGh'
+alias lsd="ls -lFG | grep '^d'"
+
+# Process
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 # Short-cuts for copy-paste.
 alias copy='pbcopy'
@@ -38,9 +48,9 @@ alias f="find . -name"
 # Lists the ten most used commands.
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 
-# ls
-alias ls='ls -alGh'
-alias lsd="ls -lFG | grep '^d'"
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Get week number
 alias week='date +%V'

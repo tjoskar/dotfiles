@@ -1,7 +1,0 @@
-{
-    "cmd": [
-        "bash",
-        "-c",
-        "clang++ -g -std=c++11 -pedantic -Wall -Wextra -Werror '$file' -o '${file_path}/${file_base_name}' && '${file_path}/${file_base_name}'"
-    ]
-}

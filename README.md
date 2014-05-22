@@ -5,18 +5,18 @@
 ```bash
 git clone https://github.com/tjoskar/dotfiles.git
 cd dotfiles
-source bootstrap.sh # This will change your system. Check the code first!
+sh bootstrap.sh # This will change your system. Check the code first!
 ```
 
 To update:
 ```bash
-source update.sh
+sh update.sh
 ```
 
 ### Add custom commands
 
 If `~/.private` exists, it will be sourced along with the other files.
-My `~/.privare` file looks something like this:
+My `~/.private` file looks something like this:
 
 ```bash
 # Git credentials

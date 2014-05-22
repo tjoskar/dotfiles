@@ -23,7 +23,9 @@ My `~/.private` file looks something like this:
 GIT_AUTHOR_NAME="Oskar Karlsson"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 git config --global user.name "$GIT_AUTHOR_NAME"
-export PATH=$PATH:/opt/X11/bin
+GIT_AUTHOR_EMAIL="kontakta@oskarkarlsson.nu"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
 
 #SSH
 alias tv="ssh tjoskar@192.168.0.12 -p 300"

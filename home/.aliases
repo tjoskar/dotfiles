@@ -34,6 +34,9 @@ alias lsd="ls -lFG | grep '^d'"
 # Process
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
+# Unsafe web
+alias unsafeweb="open /Applications/Chromium.app --args --disable-web-security"
+
 # Short-cuts for copy-paste.
 alias copy='pbcopy'
 alias paste='pbpaste'

@@ -4,4 +4,5 @@
     { "keys": ["super+."], "command": "close_tag" },
     { "keys": ["super+v"], "command": "paste_and_indent" },
     { "keys": ["super+shift+v"], "command": "paste" },
+    { "keys": ["command+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
 ]

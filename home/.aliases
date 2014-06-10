@@ -8,6 +8,9 @@ alias phpini="php -i | grep 'Configuration File'" # php --ini
 # Git
 alias commitmsg='curl -s http://whatthecommit.com/index.txt'
 
+# iPhone simulator
+alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/De‌​veloper/Applications/iPhone\ Simulator.app'
+
 # Shortcuts
 alias drop="cd ~/Dropbox"
 alias dl="cd ~/Downloads"

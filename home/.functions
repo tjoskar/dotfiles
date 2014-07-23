@@ -182,6 +182,25 @@ function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
 
+
+# Thanks to Anton Holmgren (https://github.com/alksl)
+# And Stein Fletcher (http://www.snip2code.com/Snippet/84218)
+# Change the mac address of a device (useful for various spoofing, e.g. for
+# extending limited access on public wifi networks).
+function changemacaddress() {
+  # get the current mac address
+  old=`/sbin/ifconfig en0 | awk '/ether/ {print $2}'`
+
+  # Generates a random new mac address using openssl
+  new=`openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`
+
+  # change the actual address
+  sudo /sbin/ifconfig en0 ether $new_addr
+
+  timestamp=`date`
+  echo "$timestamp: Changed mac address from $old_addr to $new_addr"
+}
+
 # Rewritten from https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
 # Count code lines in some directory.
 # $ loc py js css

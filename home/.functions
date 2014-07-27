@@ -52,10 +52,6 @@ function ged() {
   q "${files[@]}"
 }
 
-function cask() {
-  brew cask install "${@}"
-}
-
 # Extract most know archives with one command
 function extract () {
   if [ -f $1 ] ; then

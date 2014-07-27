@@ -40,6 +40,9 @@ alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 # Unsafe web
 alias unsafeweb="open /Applications/Chromium.app --args --disable-web-security"
 
+# Cask
+alias cask="brew cask"
+
 # Short-cuts for copy-paste.
 alias copy='pbcopy'
 alias paste='pbpaste'

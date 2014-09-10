@@ -17,6 +17,7 @@ Sublime Text 3
 - SublimeCodeIntel
 - SublimeLinter
 - Sublimerge
+- TernJS
 - Xdebug
 
 ### Colour Schemes

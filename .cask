@@ -10,6 +10,7 @@ function installcask() {
 
 # installcask onepassword
 
+installcask atom
 installcask alfred
 installcask brackets
 installcask chromium

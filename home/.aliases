@@ -31,7 +31,9 @@ alias du='du -ach'
 alias mkdir='mkdir -pv'
 
 # ls
-alias ls='ls -FalGh'
+# -F: Display a slash (`/') immediately after each pathname
+# -o: skip group
+alias ls='ls -FlaGho'
 alias lsd="ls -lFG | grep '^d'"
 
 # Process

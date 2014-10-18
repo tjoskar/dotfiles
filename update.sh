@@ -9,7 +9,7 @@ function copyToHome() {
 }
 
 function copyToSublime() {
-    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "README.md" -av --no-perms sublime/* "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "README.md" --exclude "Preferences.sublime-settings" -av --no-perms sublime/* "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -20,7 +20,7 @@ else
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         copyToHome
-        # copyToSublime
+        copyToSublime
     fi
 fi
 

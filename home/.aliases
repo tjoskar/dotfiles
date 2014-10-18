@@ -43,6 +43,9 @@ alias unsafeweb="open /Applications/Chromium.app --args --disable-web-security"
 # Cask
 alias cask="brew cask"
 
+# Pygments
+alias ccat=pygmentize
+
 # Short-cuts for copy-paste.
 alias copy='pbcopy'
 alias paste='pbpaste'

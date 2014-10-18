@@ -13,7 +13,7 @@ function copyToSublime() {
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	copyToHome
+    copyToHome
     copyToSublime
 else
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1

@@ -1,7 +1,20 @@
 {
+    "auto_complete": true,
+    "auto_complete_commit_on_tab": true,
     "auto_complete_selector": "source, text",
+    "auto_complete_triggers":
+    [
+        {
+            "characters": "<",
+            "selector": "text.html"
+        },
+        {
+            "characters": ".",
+            "selector": "source, text.html"
+        }
+    ],
     "bold_folder_labels": true,
-    "color_scheme": "Packages/User/Goldfish (SL).tmTheme",
+    "color_scheme": "Packages/User/Galea (SL).tmTheme",
     "copy_with_empty_selection": false,
     "default_encoding": "UTF-8",
     "ensure_newline_at_eof_on_save": true,
@@ -17,7 +30,7 @@
     "margin": 4,
     "scroll_past_end": true,
     "spell_check": true,
-    "theme": "Soda Dark 3.sublime-theme",
+    "theme": "Centurion.sublime-theme",
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true,
     "word_wrap": false,

@@ -2,6 +2,7 @@
     "auto_complete": true,
     "auto_complete_commit_on_tab": true,
     "auto_complete_selector": "source, text",
+    "caret_style": "phase",
     "auto_complete_triggers":
     [
         {
@@ -14,24 +15,26 @@
         }
     ],
     "bold_folder_labels": true,
-    "color_scheme": "Packages/User/Galea (SL).tmTheme",
+    "color_scheme": "Packages/Theme - Centurion/Galea.tmTheme",
     "copy_with_empty_selection": false,
     "default_encoding": "UTF-8",
     "ensure_newline_at_eof_on_save": true,
+    "fade_fold_buttons": false,
     "find_selected_text": true,
     "font_size": 12,
+    "highlight_line": true,
     "highlight_modified_tabs": true,
     "ignored_packages":
     [
         "Vintage"
     ],
-    "line_padding_bottom": 1,
-    "line_padding_top": 1,
+    "line_padding_bottom": 3,
+    "line_padding_top": 3,
     "margin": 4,
     "scroll_past_end": true,
     "spell_check": true,
     "theme": "Centurion.sublime-theme",
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true,
-    "word_wrap": false,
+    "word_wrap": false
 }

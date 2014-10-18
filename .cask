@@ -6,8 +6,6 @@ function installcask() {
 
 # Don't forgot to install Sip
 
-# installcask onepassword
-
 installcask airmail-beta
 installcask alfred
 installcask atom
@@ -22,6 +20,7 @@ installcask google-chrome
 installcask google-chrome-canary
 installcask iterm2
 installcask macvim
+installcask onepassword
 installcask opera
 installcask sequel-pro
 installcask skype

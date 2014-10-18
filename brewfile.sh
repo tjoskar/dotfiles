@@ -25,5 +25,10 @@ brew install p7zip
 brew install trash
 brew install phantomjs
 
+# Install Cask 
+brew tap phinze/homebrew-cask
+brew install brew-cask
+brew tap caskroom/versions
+
 # Remove outdated versions from the cellar
 brew cleanup

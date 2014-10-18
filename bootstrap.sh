@@ -7,10 +7,10 @@ cd "$(dirname "${BASH_SOURCE}")"
 if command -v brew > /dev/null 2>&1; then # Homebrew installed
     brew update
 else
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew bundle
+source brewfile.sh
 
 ./.cask start
 

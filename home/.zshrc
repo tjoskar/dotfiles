@@ -36,7 +36,7 @@ ZSH_THEME="cloud"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bower brew Composer vagrant laravel4)
+plugins=(git)
 
 # Allow comments even in interactive shells
 set -k

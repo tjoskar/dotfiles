@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE}")"
 git pull origin master
 
 function copyToHome() {
-    rsync --exclude ".git/" --exclude ".DS_Store" -av --no-perms home/ ~
+    rsync --exclude ".git/" --exclude ".nano/.git/" --exclude ".DS_Store" -av --no-perms home/ ~
 }
 
 function copyToSublime() {
@@ -20,7 +20,7 @@ else
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         copyToHome
-        copyToSublime
+        # copyToSublime
     fi
 fi
 

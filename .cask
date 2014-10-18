@@ -17,6 +17,7 @@ installcask evernote
 installcask firefox
 installcask github
 installcask google-chrome
+installcask google-chrome-canary
 installcask iterm2
 installcask macvim
 installcask opera

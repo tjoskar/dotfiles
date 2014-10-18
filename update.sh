@@ -26,3 +26,5 @@ fi
 
 unset copyToHome
 unset copyToSublime
+
+source ~/.private

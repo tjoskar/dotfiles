@@ -8,6 +8,7 @@ function installcask() {
 
 # installcask onepassword
 
+installcask airmail-beta
 installcask alfred
 installcask brackets
 installcask chromium

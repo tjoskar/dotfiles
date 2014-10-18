@@ -10,7 +10,7 @@ else
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 fi
 
-brew bundle
+sorce brewfile.sh
 
 ./.cask start
 

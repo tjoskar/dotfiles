@@ -85,3 +85,6 @@ if has("autocmd")
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
+
+" Wrap git commit messages
+au FileType gitcommit set tw=72

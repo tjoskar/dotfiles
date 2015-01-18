@@ -87,4 +87,4 @@ if has("autocmd")
 endif
 
 " Wrap git commit messages
-au FileType gitcommit set tw=72
+au FileType gitcommit set spell tw=72

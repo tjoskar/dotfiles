@@ -1,5 +1,5 @@
-# XBMC
-alias xbmclog="tail -f -100 ~/Library/Logs/xbmc.log"
+# Kodi
+alias kodilog="tail -f -100 ~/Library/Logs/kodi.log"
 
 # PHP
 alias art="php artisan"

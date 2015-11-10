@@ -40,7 +40,7 @@ alias lsd="ls -lFG | grep '^d'"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 # Unsafe web
-alias unsafeweb="open /Applications/Chromium.app --args --disable-web-security"
+alias unsafeweb="open -a /opt/homebrew-cask/Caskroom/google-chrome-canary/latest/Google\ Chrome\ Canary.app --args --disable-web-security"
 
 # Cask
 alias cask="brew cask"

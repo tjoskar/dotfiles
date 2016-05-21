@@ -54,7 +54,7 @@ alias paste='pbpaste'
 alias x="pbpaste | pbcopy"
 
 # Remove all items safely, to Trash (`brew install trash`).
-alias rm='trash'
+# alias rm='trash'
 
 # Find by name
 alias f="find . -name"

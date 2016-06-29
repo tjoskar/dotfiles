@@ -31,3 +31,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Link nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# Set dotnet core to development
+export ASPNETCORE_ENVIRONMENT=Development

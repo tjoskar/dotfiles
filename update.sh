@@ -12,19 +12,15 @@ function copyToSublime() {
     rsync --exclude ".git/" --exclude ".DS_Store" --exclude "README.md" --exclude "Preferences.sublime-settings" -av --no-perms sublime/* "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
+printf '%s ' 'This may overwrite existing files in your home directory. Are you sure? (y/n)'
+read ans
+echo $ans
+if [[ $ans =~ ^[Yy]$ ]]; then
     copyToHome
     copyToSublime
-else
-    read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        copyToHome
-        copyToSublime
-    fi
 fi
 
 unset copyToHome
 unset copyToSublime
 
-source ~/.private
+source ~/.zshrc

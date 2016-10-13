@@ -17,7 +17,7 @@ read ans
 echo $ans
 if [[ $ans =~ ^[Yy]$ ]]; then
     copyToHome
-    copyToSublime
+    # copyToSublime
 fi
 
 unset copyToHome

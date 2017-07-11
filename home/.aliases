@@ -22,9 +22,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias ......='cd ../../../../../'
 alias sublimehome='cd Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
-# alias cdb='cd -' # It's faster to type `-` in zsh
 
-# alias s="history | grep" # I never use this
 alias cl='clear'
 alias df='df -h'
 alias du='du -ach'
@@ -52,9 +50,6 @@ alias ccat=pygmentize
 alias copy='pbcopy'
 alias paste='pbpaste'
 alias x="pbpaste | pbcopy"
-
-# Remove all items safely, to Trash (`brew install trash`).
-# alias rm='trash'
 
 # Find by name
 alias f="find . -name"

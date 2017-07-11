@@ -21,8 +21,6 @@
     go = checkout
     # Commit all changes
     co = !git add -A && git commit -av
-    # Switch to a branch, creating it if necessary
-    go = checkout -B
     # Show verbose output about tags, branches or remotes
     tags = tag -l
     branches = branch -a

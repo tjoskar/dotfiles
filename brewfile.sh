@@ -11,10 +11,6 @@ brew install bash
 
 # Install more recent versions of some OS X tools
 brew install vim --override-system-vi
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
-brew tap josegonzalez/homebrew-php
-brew install php55
 brew install python
 
 # Install other useful binaries
@@ -22,13 +18,9 @@ brew install git
 brew install node
 brew install tree
 brew install p7zip
-brew install trash
-brew install phantomjs
 
 # Install Cask 
-brew tap phinze/homebrew-cask
-brew install brew-cask
-brew tap caskroom/versions
+brew tap caskroom/cask
 
 # Remove outdated versions from the cellar
 brew cleanup

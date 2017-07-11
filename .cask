@@ -6,21 +6,12 @@ function installcask() {
 
 # Don't forgot to install Sip
 
-installcask atom
-installcask airmail-beta
-installcask alfred
-installcask atom
-installcask brackets
-installcask chromium
 installcask dash
 installcask dropbox
-installcask evernote
 installcask firefox
-installcask github
 installcask google-chrome
 installcask google-chrome-canary
 installcask iterm2
-installcask macvim
 installcask onepassword
 installcask opera
 installcask sequel-pro
@@ -28,16 +19,13 @@ installcask skype
 installcask spotify
 installcask sublime-text3
 installcask the-unarchiver
-installcask utorrent
 installcask virtualbox
 installcask vagrant
 installcask vlc
-installcask wunderlist
 
 installcask qlcolorcode
 installcask qlstephen
 installcask qlmarkdown
 installcask quicklook-json
 installcask betterzipql
-
-brew cask alfred link
+installcask qlimagesize

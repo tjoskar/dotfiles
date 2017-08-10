@@ -27,6 +27,8 @@
     remotes = remote -v
     # Do a soft reset
     sreset = reset --soft HEAD~
+    # Reuse last commit message
+    rcommit = "!git commit --reedit-message=HEAD@{1}"
     # Credit an author on the latest commit
     credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
     # Interactive rebase with the given number of latest commits

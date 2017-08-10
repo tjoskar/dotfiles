@@ -89,3 +89,6 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Image size
 alias image-size="sips -g pixelWidth -g pixelHeight"
+
+# Lock
+alias lock="open -a ScreenSaverEngine"

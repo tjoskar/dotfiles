@@ -1,0 +1,21 @@
+---
+curl:ip:
+  do: exec
+  desc: my external ip
+  command: curl canhazip.com
+sshconfig:add:
+  do: exec
+  desc: add new machine to ssh config
+sed:replace:
+  do: exec
+  desc: replace string in all files
+  command: |
+    sed -i 's/<<match>>/<<replace>>/g' <<file>>
+zip:file:
+  do: exec
+  desc: create a zip archive
+  command: zip -r <<file#file.zip>> <<folder#script.episodeHunter>> -x *.git* -x *.venv* -x *.DS_Store*
+file:totalfilesize:
+  do: exec
+  desc: get total filesize
+  command: find <<path>> -name '*.<<ext>>' -exec ls -l {} \; | awk '{ Total += $5} END { print Total }'

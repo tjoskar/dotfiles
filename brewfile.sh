@@ -18,6 +18,7 @@ brew install git
 brew install node
 brew install tree
 brew install p7zip
+brew install nnn
 
 # Install Cask 
 brew tap caskroom/cask

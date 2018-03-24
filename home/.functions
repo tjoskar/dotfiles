@@ -13,6 +13,16 @@ function cdd() {
   ls;
 }
 
+export NNN_TMPFILE="/tmp/nnn"
+function n() {
+  nnn "$@"
+
+  if [ -f $NNN_TMPFILE ]; then
+    . $NNN_TMPFILE
+    rm $NNN_TMPFILE
+  fi
+}
+
 # Make and cd into directory
 function md() {
   mkdir -p "$1" && cd "$1";

@@ -35,15 +35,12 @@ ZSH=$HOME/.oh-my-zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-syntax-highlighting)
+plugins=(git)
 
 # Allow comments even in interactive shells
 set -k
 
 source $ZSH/oh-my-zsh.sh
-
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -57,3 +54,10 @@ unset file
 
 autoload -U promptinit; promptinit
 prompt pure
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.sman/sman.rc ] && source ~/.sman/sman.rc
+
+# Add `~/bin` and sman to the `$PATH`
+export PATH=$PATH:$HOME/bin:~/.sman/bin

@@ -26,3 +26,5 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Set dotnet core to development
 export ASPNETCORE_ENVIRONMENT=Development
+
+export NNN_USE_EDITOR=1

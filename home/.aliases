@@ -31,8 +31,7 @@ alias mkdir='mkdir -pv'
 # ls
 # -F: Display a slash (`/') immediately after each pathname
 # -o: skip group
-alias ls='ls -FlaGho'
-alias lsd="ls -lFG | grep '^d'"
+alias ls='exa -la --group-directories-first --git'
 
 # Process
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"

@@ -42,8 +42,7 @@ alias unsafeweb="open -a /opt/homebrew-cask/Caskroom/google-chrome-canary/latest
 # Cask
 alias cask="brew cask"
 
-# Pygments
-alias ccat=pygmentize
+alias cat=bat
 
 # Short-cuts for copy-paste.
 alias copy='pbcopy'

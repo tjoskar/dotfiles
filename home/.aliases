@@ -16,6 +16,8 @@ alias drop="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Project"
+alias e='cd ~/Project/episodehunter'
+
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -32,6 +34,7 @@ alias mkdir='mkdir -pv'
 # -F: Display a slash (`/') immediately after each pathname
 # -o: skip group
 alias ls='exa -la --group-directories-first --git'
+alias cat='bat'
 
 # Process
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"

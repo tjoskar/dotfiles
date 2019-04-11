@@ -28,3 +28,5 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export ASPNETCORE_ENVIRONMENT=Development
 
 export NNN_USE_EDITOR=1
+
+export PATH="/Users/oskar/Project/dotfiles/home/bin:$PATH"

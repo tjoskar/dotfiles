@@ -192,14 +192,44 @@ function ram() {
   fi
 }
 
-# Install an application through brew cask
-function installapp() {
-  brew cask install "${@}"
-}
-
 # https://github.com/paulmillr/dotfiles/blob/master/home/.zshrc.sh
 # 4 lulz.
 function compute() {
   while true; do head -n 100 /dev/urandom; sleep 0.1; done \
     | hexdump -C | grep "ca fe"
+}
+
+# List all aliases with fuzzy search
+function aliases() {
+  command=$(alias |
+    ack --color --color-match=bright_blue --passthru '^[^=]+' |
+    fzf-tmux --cycle --ansi --reverse --height=90% --query="$1" --multi --select-1 --exit-0 --tac |
+    cut -d "=" -f 1)
+  echo $command
+}
+
+# Use z to go to a folder
+unalias g
+function g() {
+  # Color scheme used exclusively here
+  FZF_DEFAULT_OPTS='
+    --color hl:33,fg+:214,hl+:33
+    --color spinner:208,pointer:196,marker:208'
+
+  if type fzf >/dev/null 2>&1; then
+    [ $# -gt 0 ] && _z "$*" && return
+    if type ack >/dev/null 2>&1; then # Coloring
+      cd "$(_z -l 2>&1 |
+        sed 's/^[0-9,.]* *//' | # Remove score
+        ack --color --color-match=bright_green --passthru '[^/ ]+$' |
+        ack --color --color-match=bright_green --passthru '/' |
+        fzf --ansi --cycle --height=40% --reverse --inline-info --no-sort --tac --query "${*##-* }")"
+    else
+      cd "$(_z -l 2>&1 |
+        sed 's/^[0-9,.]* *//' | # Remove score
+        fzf --ansi --cycle --height=40% --reverse --inline-info --no-sort --tac --query "${*##-* }")"
+    fi
+  else
+    _z "$*"
+  fi
 }

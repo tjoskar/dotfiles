@@ -3,16 +3,6 @@ function ql() {
   qlmanage -p "$*" >& /dev/null;
 }
 
-#CD and ln
-function cdd() {
-  if [ "$*" = "" ]; then
-    cd ~;
-  else
-    cd "$*";
-  fi
-  ls;
-}
-
 export NNN_TMPFILE="/tmp/nnn"
 function n() {
   nnn "$@"
@@ -23,43 +13,10 @@ function n() {
   fi
 }
 
-# Make and cd into directory
-function md() {
-  mkdir -p "$1" && cd "$1";
-}
-
-# cd into whatever is the forefront Finder window.
-function cdf() {  # short for cdfinder
-  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-}
-
-# Commit random message
-function crm() {
-  git commit -m"`curl -s http://whatthecommit.com/index.txt`"
-}
-qcommit() {
-  git add --all .
-  git commit -m"`curl -s http://whatthecommit.com/index.txt`"
-  git push
-}
-
 # Take this repo and copy it to somewhere else minus the .git stuff.
 function gitexport (){
   mkdir -p "$1"
   git archive master | tar -x -C "$1"
-}
-
-# open all changed files (that still actually exist) in the editor
-# credit: @cowboy
-function ged() {
-  local files=()
-  for f in $(git diff --name-only "$@"); do
-    [[ -e "$f" ]] && files=("${files[@]}" "$f")
-  done
-  local n=${#files[@]}
-  echo "Opening $n $([[ "$@" ]] || echo "modified ")file$([[ $n != 1 ]] && \
-    echo s)${@:+ modified in }$@"
-  q "${files[@]}"
 }
 
 # Extract most know archives with one command
@@ -143,25 +100,6 @@ function server() {
   # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
   # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
-}
-
-# Start a PHP server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
-function phpserver() {
-  local port="${1:-4000}"
-  local ip=$(ipconfig getifaddr en1)
-  sleep 1 && open "http://${ip}:${port}/" &
-  php -S "${ip}:${port}"
-}
-
-# `s` with no arguments opens the current directory in Sublime Text, otherwise
-# opens the given location
-function s() {
-  if [ $# -eq 0 ]; then
-    subl .
-  else
-    subl "$@"
-  fi
 }
 
 # `o` with no arguments opens current directory, otherwise opens the given

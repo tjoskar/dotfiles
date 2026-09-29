@@ -1,0 +1,213 @@
+{
+  // Theme
+  "workbench.colorTheme": "Evondev Dracula High Contrast",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 32,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+
+  /**
+   * Find
+   **/
+  "search.useIgnoreFiles": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.cache": true,
+    "**/.worktrees": true,
+    "**/package-lock.json": true,
+  },
+
+  // Default settings
+  "editor.copyWithSyntaxHighlighting": false,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.emptySelectionClipboard": false,
+  "workbench.editor.enablePreview": false,
+  "window.newWindowDimensions": "inherit",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "files.trimTrailingWhitespace": true,
+  "diffEditor.renderSideBySide": false,
+  "editor.snippetSuggestions": "bottom",
+  "editor.detectIndentation": false,
+  "window.nativeFullScreen": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "selection",
+  "debug.javascript.codelens.npmScripts": "never",
+  "editor.scrollBeyondLastColumn": 1,
+  "editor.bracketPairColorization.enabled": true,
+  "js/ts.inlayHints.functionLikeReturnTypes.enabled": false,
+  "[python]": {
+    "editor.formatOnType": true,
+  },
+  "window.zoomLevel": 1,
+  "explorer.compactFolders": false,
+  "terminal.integrated.copyOnSelection": true,
+  // "workbench.editor.navigationScope": "editor",
+
+  /**
+   * Hide Everything
+   */
+  "workbench.activityBar.location": "top",
+  "workbench.statusBar.visible": true,
+  "workbench.editor.showTabs": "single",
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "on",
+  "npm.scriptHover": false,
+
+  /**
+   * Silence The Noise
+   */
+  "editor.glyphMargin": true,
+  "scm.diffDecorations": "gutter",
+  "editor.hover.enabled": "on",
+  "editor.matchBrackets": "always",
+  "workbench.tips.enabled": false,
+  "editor.colorDecorators": false,
+  "git.decorations.enabled": false,
+  "workbench.startupEditor": "none",
+  "editor.lightbulb.enabled": "off",
+  "editor.selectionHighlight": true,
+  "editor.overviewRulerBorder": false,
+  "editor.renderLineHighlight": "line",
+  "editor.occurrencesHighlight": "off",
+  "problems.decorations.enabled": true,
+  "editor.renderControlCharacters": true,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+
+  // Eslint
+  "eslint.lintTask.enable": true,
+  "eslint.rules.customizations": [{ "rule": "*", "severity": "downgrade" }],
+  "eslint.execArgv": null,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql",
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.ts": "never",
+    "source.fixAll.eslint": "never",
+    "source.addMissingImports.ts": "never",
+    "source.organizeImports": "never",
+    "source.removeUnused.ts": "never",
+    "source.removeUnusedImports": "never",
+    "source.sortImports": "never",
+  },
+  // "[typescript]": {
+  // "editor.defaultFormatter": "denoland.vscode-deno"
+  // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[typescriptreact]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[json]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[jsonc]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[html]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode",
+  },
+  "editor.defaultFormatter": "denoland.vscode-deno",
+
+  // Deno
+  "deno.enable": false,
+
+  // Copilot
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "astro": true,
+  },
+  "svelte.enable-ts-plugin": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "security.promptForLocalFileProtocolHandling": false,
+  "editor.formatOnSave": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.graphql",
+  },
+  "explorer.fileNesting.enabled": true,
+  "githubPullRequests.fileListLayout": "tree",
+  "diffEditor.experimental.showMoves": true,
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+  },
+  "terraform.languageServer.enable": true,
+  "window.commandCenter": false,
+  "workbench.sideBar.location": "right",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "files.associations": {
+    "*.json5": "jsonc",
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+  },
+  "chat.mcp.gallery.enabled": true,
+  "editor.accessibilitySupport": "off",
+  "json.schemaDownload.trustedDomains": {
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://docs.renovatebot.com/renovate-schema.json": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/jscpd.json": true,
+    "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/nodemon.json": true,
+    "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/package.json": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true,
+  },
+  "js/ts.experimental.useTsgo": true,
+  "claudeCode.preferredLocation": "panel",
+  "githubPullRequests.queries": [
+    {
+      "label": "Open",
+      "query": "repo:${owner}/${repository} is:open draft:false",
+    },
+    {
+      "label": "Copilot on My Behalf",
+      "query": "repo:${owner}/${repository} is:open author:copilot assignee:${user}",
+    },
+    {
+      "label": "Local Pull Request Branches",
+      "query": "default",
+    },
+    {
+      "label": "Waiting For My Review",
+      "query": "repo:${owner}/${repository} is:open review-requested:${user}",
+    },
+    {
+      "label": "Created By Me",
+      "query": "repo:${owner}/${repository} is:open author:${user}",
+    },
+    {
+      "label": "All Open",
+      "query": "default",
+    },
+  ],
+  "githubPullRequests.pullBranch": "never",
+}

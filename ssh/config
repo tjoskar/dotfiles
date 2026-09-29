@@ -1,0 +1,46 @@
+# Added by OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+# This won't be added again if you remove it.
+Include ~/.orbstack/ssh/config
+IgnoreUnknown UseKeychain
+
+# Host *
+#  IdentityAgent ~/.ssh/agent.sock
+
+
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+
+# Default: Kivra (work) via YubiKey
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_kivra.pub
+  IdentitiesOnly yes
+  # IdentityFile ~/.ssh/id_ed25519_kivra
+  # IdentitiesOnly yes
+  # AddKeysToAgent yes
+  # UseKeychain yes
+
+# Personal (tjoskar)
+#   git clone git@github.com-tjoskar:tjoskar/<repo>.git
+Host github.com-tjoskar
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_personal.pub
+  IdentitiesOnly yes
+  # AddKeysToAgent yes
+  # UseKeychain yes
+
+# Break-glass: old file key, only when targeted explicitly
+Host github.com-legacy
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_kivra
+  IdentitiesOnly yes
+
+# OrbStack machines are reached as <machine>@orb (see the include above).
+# Forward the agent so git push inside a machine signs with the YubiKey.
+Host orb
+  ForwardAgent yes

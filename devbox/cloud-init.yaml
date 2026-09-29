@@ -1,0 +1,38 @@
+#cloud-config
+# Devbox: isolated Linux machine for agent work.
+#
+#   orb create --isolated --memory 24G --cpus 8 --disk 200G \
+#     -c devbox/cloud-init.yaml ubuntu:24.04 devbox
+#
+# System-level setup lives here. Everything user-level (dotfiles, mise tools,
+# editor) is in bootstrap.sh, which this file runs once as the default user.
+
+package_update: true
+package_upgrade: false
+
+packages:
+  - build-essential
+  - ca-certificates
+  - curl
+  - fish
+  - git
+  - gnupg
+  - locales
+  - tmux
+  - unzip
+  - zip
+  # Docker for kiab and the repo's postgres/playwright containers.
+  - docker.io
+  - docker-compose-v2
+  - docker-buildx
+
+runcmd:
+  - locale-gen en_US.UTF-8
+  # Default user is created by OrbStack with the macOS username and uid 1000.
+  - USERNAME="$(id -nu 1000)"; usermod -aG docker "$USERNAME"; chsh -s /usr/bin/fish "$USERNAME"
+  - systemctl enable --now docker
+  # Run the user-level bootstrap. It clones the dotfiles repo itself.
+  - >
+    USERNAME="$(id -nu 1000)";
+    su - "$USERNAME" -c
+    'curl -fsSL https://raw.githubusercontent.com/tjoskar/dotfiles/main/devbox/bootstrap.sh | bash'

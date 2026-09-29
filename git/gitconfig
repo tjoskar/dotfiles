@@ -1,0 +1,103 @@
+[user]
+	# Force explicit identity via includeIf below.
+	# Git will refuse to commit outside the tracked directories until user.name/email are set.
+	useConfigOnly = true
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = hx
+	pager = delta
+
+[apply]
+	# Auto-fix whitespace errors when running `git apply`
+	whitespace = fix
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+	default = simple
+
+[branch]
+	# Only auto-track upstream when names match — without this, branches
+	# created from origin/main inherit `main` as upstream, and push refuses
+	# because the names differ.
+	autoSetupMerge = simple
+
+[fetch]
+	prune = true
+
+[rebase]
+	autoStash = true
+
+[diff]
+	colorMoved = default
+
+[merge]
+	# Show common ancestor in conflict markers — much easier to resolve
+	conflictstyle = zdiff3
+	# Include summaries of merged commits in merge commit messages
+	log = true
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = false
+	syntax-theme = Dracula
+
+[alias]
+	l = log
+	s = status -s
+	# Interactively add, skip, or split diff hunks
+	ai = add -p
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	# `git di $number` shows the diff $number revisions ago
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+	# Add all interactive
+	ci = !git add -Ap
+	c = commit
+	co = checkout
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	# Soft reset — undo last commit, keep changes staged
+	sreset = reset --soft HEAD~
+	# Reuse last commit message
+	rcommit = "!git commit --reedit-message=HEAD@{1}"
+	# Credit an author on the latest commit
+	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+	# Interactive rebase with the given number of latest commits
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+	# Find tags containing commit
+	ft = "!f() { git describe --always --contains $1; }; f"
+	# Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+	# Remove branches that have already been merged
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	# Safer force-push
+	please = "push --force-with-lease"
+	# Stash + fetch + merge origin/main + stash pop
+	remain = "!f() { git stash && git fetch origin && git merge origin/main && git stash pop; }; f"
+	# fzf-select recently-visited branch from reflog
+	lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 50 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}' | fzf --ansi | cut -d ':' -f 2 | xargs echo | xargs git checkout
+	set-upstream = "!git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)"
+	mergemain = !git fetch origin && git merge origin/main
+
+# --- Identity by directory ---
+# Trailing slash makes it recursive. Match applies when $GIT_DIR is inside the path.
+[includeIf "gitdir:~/projects/kivra/"]
+	path = ~/.config/git/config-kivra
+
+[includeIf "gitdir:~/projects/tjoskar/"]
+	path = ~/.config/git/config-tjoskar

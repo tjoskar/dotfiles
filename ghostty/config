@@ -1,0 +1,15 @@
+# Ghostty config — https://ghostty.org/docs/config/reference
+
+font-family = "JetBrainsMono Nerd Font"
+font-size = 16
+
+# ~1.5x line-height feel (% on top of font's natural cell height — tweak to taste)
+adjust-cell-height = 25%
+
+# Copy selections to the system clipboard (Cmd+V works on what you selected)
+copy-on-select = clipboard
+
+# Warn before pasting text that looks unsafe (newlines, control chars, etc.)
+clipboard-paste-protection = true
+
+theme = Dracula

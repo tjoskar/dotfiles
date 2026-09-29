@@ -1,0 +1,9 @@
+[user]
+	name = tjoskar
+	email = tjoskar@users.noreply.github.com
+
+# Inside ~/projects/tjoskar/, rewrite plain github.com URLs to the personal SSH alias
+# so the personal key is used (default github.com host uses the kivra key).
+[url "git@github.com-tjoskar:"]
+	insteadOf = git@github.com:
+	pushInsteadOf = git@github.com:

@@ -1,1 +1,4 @@
-home/.private
+.DS_Store
+*.swp
+# Work-internal hostnames, see hosts/README.md
+hosts/local

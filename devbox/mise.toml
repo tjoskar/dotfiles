@@ -1,0 +1,18 @@
+# Tools that exist only on the devbox. Linked to ~/.config/mise/conf.d/devbox.toml
+# by bootstrap.sh; mise merges it with the shared mise/config.toml.
+# On the Mac these come from Homebrew instead.
+
+[tools]
+bat = "latest"
+delta = "latest"
+eza = "latest"
+fd = "latest"
+fzf = "latest"
+gh = "latest"
+helix = "latest"
+lazygit = "latest"
+neovim = "latest"
+ripgrep = "latest"
+starship = "latest"
+yazi = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"

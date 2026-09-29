@@ -1,0 +1,8 @@
+[tools]
+herdr = "latest"
+node = "lts"
+pipx = "latest"
+pnpm = "latest"
+
+[settings]
+experimental = true
